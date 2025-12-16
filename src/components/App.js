@@ -5,7 +5,7 @@ import Tooltip from "./Tooltip";
 const App = () => {
   return (
     <div>
-      <Tooltip text="This is a tooltip text" children="This is a tooltip" />
+      <Tooltip text="This is another tooltip" children="This is a tooltip" />
     </div>
   ); // prettier-ignore
 };
