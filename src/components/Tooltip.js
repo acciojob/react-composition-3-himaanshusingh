@@ -13,8 +13,10 @@ const Tooltip = ({ text, children }) => {
 
   return (
     <>
-      <h1 onMouseOver={handleOver} onMouseOut={handleOut}>{text}</h1>
+      <h1 onMouseEnter={handleOver} onMouseLeave={handleOut}>{text}</h1>
       <p>{childrenText}</p>
     </>
   ); // prettier-ignore
 };
+
+export default Tooltip;
