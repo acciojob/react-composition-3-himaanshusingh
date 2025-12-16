@@ -14,7 +14,7 @@ const Tooltip = ({ text, children }) => {
   return (
     <>
       <h2 className="tooltip" onMouseEnter={handleOver} onMouseLeave={handleOut}><div>{children}</div></h2>
-      {toolTipText && <p className="tooltiptext"><div>{toolTipText}</div></p>}
+      {toolTipText && <p className="tooltip tooltiptext"><div>{toolTipText}</div></p>}
     </>
   ); // prettier-ignore
 };
