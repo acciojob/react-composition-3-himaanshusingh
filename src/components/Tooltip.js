@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 const Tooltip = ({ text, children }) => {
-  const [childrenText, setChildrenText] = useState("");
+  const [toolTipText, setText] = useState("");
 
   function handleOver() {
-    setChildrenText(children);
+    setText(text);
   }
 
   function handleOut() {
-    setChildrenText("");
+    setText("");
   }
 
   return (
     <>
-      <h2 className="tooltip" onMouseEnter={handleOver} onMouseLeave={handleOut}><div>{text}</div></h2>
-      {childrenText && <p className="tooltip"><div>{childrenText}</div></p>}
+      <h2 className="tooltip" onMouseEnter={handleOver} onMouseLeave={handleOut}><div>{children}</div></h2>
+      {toolTipText && <p className="tooltiptext"><div>{toolTipText}</div></p>}
     </>
   ); // prettier-ignore
 };
