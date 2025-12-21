@@ -4,10 +4,22 @@ import Tooltip from "./Tooltip";
 
 const App = () => {
   return (
-    <div>
-      <Tooltip text="This is another tooltip" children="This is a tooltip" />
+    <div id="main">
+      {/* Do not remove the main div */}
+
+      <h2 className="tooltip">
+        <Tooltip text="This is a tooltip">Hover over me</Tooltip>
+      </h2>
+
+      <hr />
+
+      <p className="tooltip">
+        <Tooltip text="This is another tooltip">
+          Hover over me to see another tooltip
+        </Tooltip>
+      </p>
     </div>
-  ); // prettier-ignore
+  );
 };
 
 export default App;

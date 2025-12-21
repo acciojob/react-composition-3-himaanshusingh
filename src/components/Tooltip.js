@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "./../styles/App.css";
 
 const Tooltip = ({ text, children }) => {
-  const [toolTipText, setText] = useState("");
-
+  const [showTooltip, setShowTooltip] = React.useState(false);
   return (
-    <>
-      {toolTipText && <h2 className="tooltip">{text}</h2>}
-      <p className="tooltip tooltiptext" onMouseEnter={() => setText(text)} onMouseLeave={() => setText("")}>{children}</p>
-    </>
-  ); // prettier-ignore
+    <div
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      {children}
+      {showTooltip && <div className="tooltiptext">{text}</div>}
+    </div>
+  );
 };
 
 export default Tooltip;
