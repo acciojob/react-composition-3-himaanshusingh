@@ -1,25 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Tooltip = ({ text, children }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  function handleMouseEnter() {
-    setShowTooltip(true);
-  }
-
-  function handleMouseLeave() {
-    setShowTooltip(false);
-  }
-
+  const [showTooltip, setShowTooltip] = React.useState(false);
   return (
-    <p
-      className="tooltip"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+    <div
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
     >
       {children}
-      {showTooltip && <p className="tooltiptext">{text}</p>}
-    </p>
+      {showTooltip && <div className="tooltiptext">{text}</div>}
+    </div>
   );
 };
 
